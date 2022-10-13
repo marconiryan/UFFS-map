@@ -59,11 +59,14 @@
 
 				const controls = new OrbitControls( camera, renderer.domElement );
 				controls.mouseButtons = { RIGHT: THREE.MOUSE.ROTATE, MIDDLE: THREE.MOUSE.DOLLY, LEFT: THREE.MOUSE.PAN }
-				
+				controls.touches.ONE = THREE.TOUCH.PAN;
+				controls.touches.TWO = THREE.TOUCH.DOLLY_ROTATE;
 				controls.screenSpacePanning = true;
 				controls.enableRotate = false;
 				controls.zoomSpeed = 4;
 				controls.maxDistance = 200;
+				console.log(controls)
+				console.log(THREE.TOUCH);
 				controls.addEventListener( 'change', render );
 				//
 
